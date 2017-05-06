@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static "css/inicio.css" %}">
+
+<meta name="viewport" content="width:device-width, initial-scale=1.0">
+</head>
+<body background= "{% static "imagenes/fondo.jpg" %}">
+  <center><div class="card" style="width: 40rem;">
+    <div class="card-block">
+      <form>
+        <div class = "form-group"id="Formulario">
+          <h1>Inicia Sesión</h1>
+          Bienvenido<br><br>
+          <div class = "form-group">
+            <input class = "form-control"type = "text" placeholder = "Ingrese su Correo">
+          </div>
+            <input class = "form-control"type = "password" placeholder="Ingrese su Contraseña">
+          </div>
+          <a href = "{% url 'home' %}"<button type="button" class = "btn btn-warning">Entrar</button></a><br><br>
+          ¿No tienes una cuenta?<br>
+          <a href = "{%url 'registro' %}">Regístrate</a><br>
+          ¿Olvidaste tu contraseña?<br>
+          <a href = "https://www.google.es/">Recuperar contraseña</a>
+          <br>
+        </div>
+        </div>
+      </form>
+    </center>
+    <br><br>
+    <center><div>
+    <!--CLASS-->
+    <a href="https://play.google.com/store/apps?hl=es"><img src="{% static "imagenes/googleplay.png" %}" class="Img1"></a>
+    <!--ID-->
+    <a href="https://itunes.apple.com/co/genre/ios/id36?mt=8"><img src="{% static "imagenes/appstore.jpg" %}" id="Img2"><br></a>
+    </div></center>
