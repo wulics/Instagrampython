@@ -2,11 +2,14 @@
   height: 150px;
   width: auto;
   border-radius: 20%;
+  margin-top: 5%;
 }
+
 #Img2{
   height: 150px;
   width: auto;
   border-radius: 50%;
+  margin-top: 5%;
 }
 #Imagenes{
   border-style: double;
@@ -17,7 +20,8 @@
 }
 #Formulario{
   color: #2966a3;
-  border-style: double;
+  margin-top: 50%;
+  border-style: none;
   width: 100%;
   text-align: center;
   float: right;

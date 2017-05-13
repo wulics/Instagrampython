@@ -17,7 +17,8 @@
 }
 #Formulario{
   color: #2966a3;
-  border-style: dotted;
+  border-style: none;
+  margin-top: 50%;
   width: 100%;
   text-align: center;
   float: right;
