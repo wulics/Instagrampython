@@ -1,0 +1,12 @@
+.card{
+  background-color: #FFFFFF;
+  width: 30%;
+  border: solid;
+  border-width: thin;
+  border-radius: 10px;
+}
+
+#topm{
+  width: 19%;
+  text-align: center;
+}
