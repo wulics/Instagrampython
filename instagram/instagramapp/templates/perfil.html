@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>perfil</title>
-  <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static "css/perfil.css" %}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -11,10 +11,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body  background= "{% static "imagenes/fondo.jpg" %}">
+<body  class="body">
   <ul class="nav nav-pills">
-    <li role="presentation" ID="topm"><a href="#"><i class="material-icons">home</i></a></li>
-    <li role="presentation" ID="topm"><a href="{% url 'home' %}"><i class="material-icons">explore</i></a></li>
+    <li role="presentation" ID="topm"><a href="{% url 'home' %}"><i class="material-icons">home</i></a></li>
+    <li role="presentation" ID="topm"><a href="#"><i class="material-icons">explore</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">camera_enhance</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">favorite</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">account_circle</i></a></li>
@@ -27,6 +27,39 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+  </center>
+<center>
+  <section class="profile">
+            <section class="imagen">
+                <picture><img src="{{ curr_user.photo|default_if_none:"/static/polls/media/default" }}" class ="img-profile"/></picture>
+            </section>
+            <section class="info">
+                <section class="username">
+                    <h1 class="title">{{ curr_user.nickname }}</h1>
+                    <button class="btn">Editar perfil</button>
+                    <button class="btn dots">•••</button>
+                </section>
+                <section class="follow_Info">
+                    <section class="follower_Info">
+                        <p>{{ media_user|length }} publicaciones </p>
+                    </section>
+                    <section class="follower_Info">
+                        <p>57 seguidores</p>
+                    </section>
+                    <section class="follower_Info">
+                        <p>75 seguidos</p>
+                    </section>
+                </section>
+                <section class="profile_details">
+                    <section class="profile_name">
+                        <p>{{ curr_user.name }}</p>
+                    </section>
+                   <section class="profile_description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis autem inventore illum, nisi natus aut.</p>
+                    </section>
+                </section>
+            </section>
+        </section>
   </center>
 </div>
 </body>

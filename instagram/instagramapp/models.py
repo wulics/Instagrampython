@@ -4,7 +4,7 @@ from datetime import datetime
 from django.contrib.auth.models import User
 
 class MiUsuario(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     photo = models.CharField(max_length=100, null = True)
 
 class Follow( models.Model ):
