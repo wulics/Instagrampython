@@ -10,34 +10,34 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+  #topm{
+    width: 19%;
+    text-align: center;
+  }
+
+  </style>
 </head>
-<body  class="body">
+<body  background= "{% static "imagenes/fondo.jpg" %}">
   <ul class="nav nav-pills">
     <li role="presentation" ID="topm"><a href="{% url 'home' %}"><i class="material-icons">home</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">explore</i></a></li>
-    <li role="presentation" ID="topm"><a href="#"><i class="material-icons">camera_enhance</i></a></li>
+    <li role="presentation" ID="topm"><a href="{% url 'subirfoto' %}"><i class="material-icons">camera_enhance</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">favorite</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">account_circle</i></a></li>
   </ul>
 
-  <center>
-  <div class="card" style="width: 20rem;">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </center>
 <center>
   <section class="profile">
             <section class="imagen">
-                <picture><img src="{{ curr_user.photo|default_if_none:"/static/polls/media/default" }}" class ="img-profile"/></picture>
+                <picture><img style="height:50px;width:50px" src="{% static "imagenes/profile.png" %}"/></picture>
             </section>
             <section class="info">
                 <section class="username">
-                    <h1 class="title">{{ curr_user.nickname }}</h1>
+                    <h1 class="title">{{ curr_user.username }}</h1>
                     <button class="btn">Editar perfil</button>
-                    <button class="btn dots">•••</button>
+                    <a href="{% url 'salir' %}"<button class="btn dots">•••</button></a>
                 </section>
                 <section class="follow_Info">
                     <section class="follower_Info">
@@ -55,7 +55,6 @@
                         <p>{{ curr_user.name }}</p>
                     </section>
                    <section class="profile_description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis autem inventore illum, nisi natus aut.</p>
                     </section>
                 </section>
             </section>

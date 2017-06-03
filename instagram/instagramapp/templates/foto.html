@@ -10,34 +10,37 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+  .foto_square{
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 30%;
+    width:85%;
+    padding-left: 0px;
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  .descripcion_foto{
+
+  }
+  </style>
+
 </head>
 <body  background= "{% static "imagenes/fondo.jpg" %}">
   <ul class="nav nav-pills">
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">home</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">explore</i></a></li>
-    <li role="presentation" ID="topm"><a href="{% url 'subirfoto' %}"><i class="material-icons">camera_enhance</i></a></li>
+    <li role="presentation" ID="topm"><a href="#"><i class="material-icons">camera_enhance</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">favorite</i></a></li>
     <li role="presentation" ID="topm"><a href="{% url 'perfil' %}"><i class="material-icons">account_circle</i></a></li>
   </ul>
-
-  <center><div class="card">
-  <h4 class="card-block">
-        <table>
-          <tr>
-            <td class="usuario">usuario</td>
-            <td class="hora">hora</td>
-          </tr>
-        </table>
-    </h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">
-          <a href="#">
-            <i class="material-icons">favorite</i>
-          </a>
-      </span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+<center>
+  <div class="foto_square">
+    <button> subir foto </button><br><br>
+    <input class="decripcion_foto" placeholder="Descripción de la foto" size="120"></input>
   </div>
-</div></center>
+</center>
 </body>
 </html>

@@ -120,6 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL ='registro'
-LOGIN_REDIRECT_ULR='home'
+LOGIN_URL ='inicio'
+LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL= 'registro'
