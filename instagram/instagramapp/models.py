@@ -13,10 +13,12 @@ class Follow( models.Model ):
 
 class Post(models.Model):
     photo = models.CharField(max_length=100, null = True)
-    video = models.CharField(max_length=100, null = True)
     time = models.DateTimeField(default=datetime.now)
     description = models.CharField(max_length=100, null = True)
-    user_id = models.ForeignKey(MiUsuario)
+    creador = models.ForeignKey(MiUsuario)
+
+#for item in MiUsuario.objects.all():
+#print (item.usuario.username + '-' + str(item.usuario.id) + '-' + str(item.id))
 
 class Comment(models.Model):
     text = models.CharField(max_length=100)

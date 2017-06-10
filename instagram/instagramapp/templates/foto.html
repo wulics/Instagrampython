@@ -20,27 +20,39 @@
     padding-left: 0px;
     text-align: left;
     padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
 
-  .descripcion_foto{
-
-  }
   </style>
 
 </head>
 <body  background= "{% static "imagenes/fondo.jpg" %}">
   <ul class="nav nav-pills">
-    <li role="presentation" ID="topm"><a href="#"><i class="material-icons">home</i></a></li>
+    <li role="presentation" ID="topm"><a href="{% url 'home' %}"><i class="material-icons">home</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">explore</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">camera_enhance</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">favorite</i></a></li>
     <li role="presentation" ID="topm"><a href="{% url 'perfil' %}"><i class="material-icons">account_circle</i></a></li>
   </ul>
 <center>
+  <form action='{% url 'upload' %}' method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
   <div class="foto_square">
-    <button> subir foto </button><br><br>
-    <input class="decripcion_foto" placeholder="Descripción de la foto" size="120"></input>
+    <input type="file" name="foto" size="20"onchange="loadFile(event)">
+<img id="output"/>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+    <br><br>
+    <input class="decripcion_foto" name="description" placeholder="Descripción de la foto" size="40"></input><br><br>
+    <button class = "btn btn-warning">subir foto</button><br><br><br><br>
   </div>
+</form>
 </center>
+
 </body>
 </html>

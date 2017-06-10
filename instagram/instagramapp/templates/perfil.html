@@ -13,13 +13,25 @@
 
   <style>
   #topm{
-    width: 19%;
+    width: 19.9%;
     text-align: center;
+  }
+
+  .image{
+    height: 250px;
+    width: 250px;
+    flex-grow: 1;
+    border-radius: 25%;
+  }
+
+  .container{
+    flex-wrap: wrap;
   }
 
   </style>
 </head>
 <body  background= "{% static "imagenes/fondo.jpg" %}">
+
   <ul class="nav nav-pills">
     <li role="presentation" ID="topm"><a href="{% url 'home' %}"><i class="material-icons">home</i></a></li>
     <li role="presentation" ID="topm"><a href="#"><i class="material-icons">explore</i></a></li>
@@ -59,7 +71,13 @@
                 </section>
             </section>
         </section>
-  </center>
+
 </div>
+<div class="container">
+  {% for item in media_user %}
+  <img class="image" src="{% static '' %}{{item.photo}}" alt="">
+  {% endfor %}
+</div>
+  </center>
 </body>
 </html>

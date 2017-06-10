@@ -3,7 +3,13 @@
   text-align: center;
 }
 
+.barra{
+  display: none;
+}
 
+.barra:hover{
+  display: block;
+}
 .card{
   background-color: #FFFFFF;
   width: 30%;
